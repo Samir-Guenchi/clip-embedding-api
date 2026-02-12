@@ -1,0 +1,35 @@
+name: Keep HF Space Alive
+
+on:
+  schedule:
+    # Run every 30 minutes to prevent Space from sleeping
+    - cron: '*/30 * * * *'
+  workflow_dispatch:  # Allow manual trigger from GitHub UI
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Hugging Face Space
+        run: |
+          SPACE_URL="https://samirdze-alg.hf.space"
+          
+          echo "🔄 Pinging $SPACE_URL at $(date)"
+          
+          # Main ping
+          HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" "$SPACE_URL" --max-time 30)
+          
+          echo "📊 Response: HTTP $HTTP_CODE"
+          
+          if [ "$HTTP_CODE" -eq 200 ] || [ "$HTTP_CODE" -eq 302 ]; then
+            echo "✅ Space is alive and running!"
+          else
+            echo "⚠️ Space may be starting up (HTTP $HTTP_CODE)"
+            echo "Waiting 10 seconds and retrying..."
+            sleep 10
+            HTTP_CODE2=$(curl -s -o /dev/null -w "%{http_code}" "$SPACE_URL")
+            echo "🔄 Retry response: HTTP $HTTP_CODE2"
+          fi
+          
+      - name: Log timestamp
+        run: echo "✅ Keep-alive completed at $(date '+%Y-%m-%d %H:%M:%S UTC')"

@@ -12,6 +12,7 @@ from io import BytesIO
 import base64
 import tempfile
 import os
+from keep_alive import KeepAlive
 
 # Use CPU and smaller memory footprint
 model = None
@@ -163,4 +164,10 @@ demo = gr.Interface(
 )
 
 if __name__ == "__main__":
+    # Start keep-alive service (replace with your actual Space URL)
+    space_url = os.getenv("SPACE_URL", "")  # Set this in HF Space secrets
+    if space_url:
+        keep_alive = KeepAlive(space_url, interval=1800)  # 30 minutes
+        keep_alive.start()
+    
     demo.launch()
