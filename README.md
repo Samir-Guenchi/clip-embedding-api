@@ -4,7 +4,7 @@ emoji: 🖼️
 colorFrom: blue
 colorTo: purple
 sdk: gradio
-sdk_version: "4.44.0"
+sdk_version: "4.44.1"
 app_file: app.py
 pinned: false
 license: mit
@@ -197,7 +197,7 @@ Go to **Actions** → **Keep HF Space Alive** → **Run workflow**
 ##  Architecture
 
 - **Model**: OpenAI CLIP ViT-B/32 (400M parameters)
-- **Framework**: Gradio 4.44.0
+- **Framework**: Gradio 4.44.1
 - **Backend**: PyTorch + Transformers
 - **Video Processing**: OpenCV (cv2)
 - **Keep-Alive**: GitHub Actions (cron)
