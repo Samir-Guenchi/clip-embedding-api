@@ -11,7 +11,7 @@ license: mit
 short_description: Fast CLIP embeddings API with image, video & base64 support
 ---
 
-# 🖼️ CLIP Embedding API
+#  CLIP Embedding API
 
 **Fast, lightweight OpenAI CLIP embedding service with auto-keep-alive for 24/7 uptime.**
 
@@ -23,19 +23,19 @@ Convert images and videos into 512-dimensional CLIP embeddings via simple HTTP A
 
 ---
 
-## ✨ Features
+##  Features
 
-- 🚀 **Fast embeddings** using OpenAI CLIP (ViT-B/32)
-- 🖼️ **Multiple input formats**: Image URLs, base64, video URLs
-- 🎥 **Video support** with automatic frame extraction (3 frames)
-- 🔄 **Auto keep-alive** via GitHub Actions (never sleeps!)
-- 🆓 **Free tier optimized** for Hugging Face Spaces
-- 📊 **512-dimensional** normalized embeddings
-- 🌐 **RESTful API** with JSON responses
+-  **Fast embeddings** using OpenAI CLIP (ViT-B/32)
+-  **Multiple input formats**: Image URLs, base64, video URLs
+-  **Video support** with automatic frame extraction (3 frames)
+-  **Auto keep-alive** via GitHub Actions (never sleeps!)
+-  **Free tier optimized** for Hugging Face Spaces
+-  **512-dimensional** normalized embeddings
+-  **RESTful API** with JSON responses
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### API Endpoint
 ```
@@ -82,23 +82,23 @@ console.log('Dimensions:', embedding.length); // 512
 
 ---
 
-## 📚 Input Formats
+##  Input Formats
 
-### 1️⃣ Image URL
+### 1️ Image URL
 ```json
 {
   "data": ["https://example.com/photo.jpg"]
 }
 ```
 
-### 2️⃣ Base64 Image
+### 2️ Base64 Image
 ```json
 {
   "data": ["data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEA..."]
 }
 ```
 
-### 3️⃣ Video URL
+### 3️ Video URL
 ```json
 {
   "data": ["https://example.com/video.mp4"]
@@ -108,7 +108,7 @@ console.log('Dimensions:', embedding.length); // 512
 
 ---
 
-## 📤 Response Format
+##  Response Format
 
 ### Single Image
 ```json
@@ -142,7 +142,7 @@ console.log('Dimensions:', embedding.length); // 512
 
 ---
 
-## 🛠️ Local Development
+##  Local Development
 
 ### Prerequisites
 - Python 3.8+
@@ -165,18 +165,17 @@ Access at: http://localhost:7860
 
 ---
 
-## ☁️ Deploy to Hugging Face Spaces
+##  Deploy to Hugging Face Spaces
 
 1. Fork this repo
 2. Go to [Hugging Face Spaces](https://huggingface.co/spaces)
 3. Create new Space → Import from Git
 4. Paste your repo URL
 5. Select **SDK: Gradio**
-6. Deploy! 🚀
+6. Deploy! 
 
 ---
-
-## 🔄 Keep-Alive Setup
+##  Keep-Alive Setup
 
 Free Hugging Face Spaces sleep after 48 hours. This repo includes **GitHub Actions** to keep your Space active 24/7.
 
@@ -188,14 +187,14 @@ Free Hugging Face Spaces sleep after 48 hours. This repo includes **GitHub Actio
 4. Go to **Actions** tab
 5. Click "I understand my workflows, go ahead and enable them"
 
-✅ Your Space will now be pinged every 30 minutes automatically!
+ Your Space will now be pinged every 30 minutes automatically!
 
 ### Manual Trigger
 Go to **Actions** → **Keep HF Space Alive** → **Run workflow**
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 - **Model**: OpenAI CLIP ViT-B/32 (400M parameters)
 - **Framework**: Gradio 4.44.0
@@ -205,18 +204,18 @@ Go to **Actions** → **Keep HF Space Alive** → **Run workflow**
 
 ---
 
-## 📊 Use Cases
+##  Use Cases
 
-- 🔍 **Visual search engines** - Semantic image similarity
-- 🖼️ **Image deduplication** - Find duplicate/similar images
-- 🎨 **Content recommendation** - Suggest visually similar content
-- 📹 **Video indexing** - Extract keyframe embeddings
-- 🤖 **Multimodal AI** - Image-text matching tasks
-- 🗄️ **Vector databases** - Store image embeddings for RAG
+-  **Visual search engines** - Semantic image similarity
+-  **Image deduplication** - Find duplicate/similar images
+-  **Content recommendation** - Suggest visually similar content
+-  **Video indexing** - Extract keyframe embeddings
+-  **Multimodal AI** - Image-text matching tasks
+-  **Vector databases** - Store image embeddings for RAG
 
 ---
 
-## 🎯 Performance
+##  Performance
 
 | Input Type | Processing Time | Output |
 |------------|----------------|--------|
@@ -228,7 +227,7 @@ Go to **Actions** → **Keep HF Space Alive** → **Run workflow**
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions welcome! Please:
 1. Fork the repository
@@ -239,13 +238,12 @@ Contributions welcome! Please:
 
 ---
 
-## 📄 License
+##  License
 
 MIT License - see [LICENSE](LICENSE) file
 
 ---
-
-## 🔗 Links
+##  Links
 
 - **Live Demo**: https://samirdze-alg.hf.space
 - **API Docs**: https://samirdze-alg.hf.space (interactive UI)
@@ -254,7 +252,7 @@ MIT License - see [LICENSE](LICENSE) file
 
 ---
 
-## 💡 Tips
+##  Tips
 
 - **Rate Limiting**: Free tier has rate limits. Consider caching results.
 - **Batch Processing**: Process multiple images by calling API sequentially.
@@ -274,7 +272,7 @@ print(f"Similarity: {similarity:.2%}")
 
 ---
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 **Space is sleeping?**
 - Check GitHub Actions are enabled
@@ -293,7 +291,7 @@ print(f"Similarity: {similarity:.2%}")
 
 <div align="center">
 
-Made with ❤️ by [Samir Guenchi](https://github.com/Samir-Guenchi)
+Made with by [Samir Guenchi](https://github.com/Samir-Guenchi)
 
 ⭐ Star this repo if you find it useful!
 
